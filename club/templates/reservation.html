@@ -1,4 +1,5 @@
 
+{% load static %}
 
 <!doctype html>
 <html lang="en">
@@ -9,7 +10,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="{% static 'css/reservation.css' %}">
     <title>Hello, world!</title>
   </head>
   <body>
@@ -41,25 +42,25 @@
   <tbody>
 {% for date in reservation_date %}
     <tr>
-     <td><a href="reservation/{{date.day_id}}">{{date.Date}}</a></td>
-     <td class = 'time'>{{date.T6_7}}</td>
-    <td class = 'time'>{{date.T7_8}}</td>
-    <td class = 'time'>{{date.T8_9}}</td>
-    <td class = 'time'>{{date.T9_10}}</td>
-    <td class = 'time'>{{date.T10_11}}</td>
-    <td class = 'time'>{{date.T11_12}}</td>
-    <td class = 'time'>{{date.T12_13}}</td>
-    <td class = 'time'>{{date.T13_14}}</td>
-    <td class = 'time'>{{date.T14_15}}</td>
-    <td class = 'time'>{{date.T15_16}}</td>
-    <td class = 'time'>{{date.T16_17}}</td>
-    <td class = 'time'>{{date.T17_18}}</td>
-    <td class = 'time'>{{date.T18_19}}</td>
-    <td class = 'time'>{{date.T19_20}}</td>
-    <td class = 'time'>{{date.T20_21}}</td>
-    <td class = 'time'>{{date.T21_22}}</td>
-    <td class = 'time'>{{date.T22_23}}</td>
-    <td class = 'time'>{{date.T23_24}}</td>
+     <td class= "title"><a href="reservation/{{date.day_id}}">{{date.Date}}</a></td>
+    <td class = '{{date.T6_7}}'   onclick="makeReservation(this, {{date.day_id}})"></td>
+    <td class = '{{date.T7_8}}'   onclick="makeReservation(this, {{date.day_id}})"></td>
+    <td class = '{{date.T8_9}}'   onclick="makeReservation(this, {{date.day_id}})"></td>
+    <td class = '{{date.T9_10}}'  onclick="makeReservation(this, {{date.day_id}})"></td>
+    <td class = '{{date.T10_11}}' onclick="makeReservation(this, {{date.day_id}})"></td>
+    <td class = '{{date.T11_12}}' onclick="makeReservation(this, {{date.day_id}})"></td>
+    <td class = '{{date.T12_13}}' onclick="makeReservation(this, {{date.day_id}})"></td>
+    <td class = '{{date.T13_14}}' onclick="makeReservation(this, {{date.day_id}})"></td>
+    <td class = '{{date.T14_15}}' onclick="makeReservation(this, {{date.day_id}})"></td>
+    <td class = '{{date.T15_16}}' onclick="makeReservation(this, {{date.day_id}})"></td>
+    <td class = '{{date.T16_17}}' onclick="makeReservation(this, {{date.day_id}})"></td>
+    <td class = '{{date.T17_18}}' onclick="makeReservation(this, {{date.day_id}})"></td>
+    <td class = '{{date.T18_19}}' onclick="makeReservation(this, {{date.day_id}})"></td>
+    <td class = '{{date.T19_20}}' onclick="makeReservation(this, {{date.day_id}})"></td>
+    <td class = '{{date.T20_21}}' onclick="makeReservation(this, {{date.day_id}})"></td>
+    <td class = '{{date.T21_22}}' onclick="makeReservation(this, {{date.day_id}})"></td>
+    <td class = '{{date.T22_23}}' onclick="makeReservation(this, {{date.day_id}})"></td>
+    <td class = '{{date.T23_24}}' onclick="makeReservation(this, {{date.day_id}})"></td>
 
     </tr>
   {%endfor%}
@@ -67,40 +68,19 @@
 </table>
 </div>
   <script>
-  var x = document.getElementsByClassName("time");
-  for (var i = 0; i < x.length; i++) {
-  if (x[i].textContent.includes('open'))
-      x[i].style.backgroundColor = "green"
-  else if (x[i].textContent.includes('closed'))
-      x[i].style.backgroundColor = "black"
-
-  else
-      x[i].style.backgroundColor = "red"
-      x[i].innerHTML = ""
 
 
 
+function makeReservation(el,day) {
+  if (el.className == "open") {
+  document.location.href = "reservation/" + day
   }
+}
+
+
+
   </script>
 
-<!--<div class="container">-->
-<!--    <div class="jumbotron" style=background-color:#c1c1c1; >-->
-<!--  <div style="margin:0 auto;text-align:center">-->
-
-<!--<h1>{{object.Date}}</h1>-->
-<!--  <form  method="post">-->
-<!--    {% csrf_token %}-->
-<!--    {{form.first_name.label}}<br>-->
-<!--    {{form.first_name}}<br>-->
-<!--    {{form.sur_name.label}}<br>-->
-<!--    {{form.sur_name}}<br>-->
-<!--    {{form.email.label}}<br>-->
-<!--    {{form.email}}<br>-->
-<!--    {{form.mobil_phone.label}}<br>-->
-<!--    {{form.mobil_phone}}<br>-->
-<!--    {{form.Time_Select.label}}<br>-->
-<!--    {{form.Time_Select}}<br><br>-->
-<!--  <button type="submit" style=height:50px;width:200px;>Send</button>-->
 <!--    </div>-->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

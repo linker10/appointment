@@ -1,0 +1,40 @@
+/* index page*/
+
+/* index page*/
+
+
+
+h1{
+  text-align: center;
+}
+
+nav {
+  font-family: 'Abril Fatface';
+  font-size: 20px;
+}
+
+
+
+.table a
+{
+    display:block;
+    text-decoration:none;
+}
+
+.table td[class="open"] 
+
+{
+  background-color: green;
+}
+
+.table td 
+
+{
+  background-color: red;
+
+}  
+.table td[class="title"]
+
+{
+  background-color: #454d55;
+}

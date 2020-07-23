@@ -61,3 +61,21 @@ nav {
 }
 
 /*Forms!*/
+
+.table a
+{
+    display:block;
+    text-decoration:none;
+}
+
+.table td[class="open"] 
+
+{
+  background-color: green;
+}
+
+td[class="close"] 
+
+{
+  background-color: red;
+}
