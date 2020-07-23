@@ -1,0 +1,111 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+<h2>Welcome</h2>
+    <table class="table table-dark" style="border-collapse: separate; box-sizing: border-box; border-spacing: 2px; border-color: grey; ">
+  <thead>
+    <tr>
+       <th scope="col">Date</th>
+      <th scope="col">6-7</th>
+      <th scope="col">7-8</th>
+      <th scope="col">8-9</th>
+      <th scope="col">9-10</th>
+       <th scope="col">10-11</th>
+      <th scope="col">11-12</th>
+        <th scope="col">12-13</th>
+      <th scope="col">13-14</th>
+      <th scope="col">14-15</th>
+      <th scope="col">15-16</th>
+       <th scope="col">16-17</th>
+      <th scope="col">17-18</th>
+      <th scope="col">18-19</th>
+      <th scope="col">19-20</th>
+       <th scope="col">20-21</th>
+      <th scope="col">21-22</th>
+      <th scope="col">22-23</th>
+      <th scope="col">23-24</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for date in reservation_date %}
+    <tr>
+     <td><a href="reservation/{{date.day_id}}">{{date.Date}}</a></td>
+     <td class = 'time'>{{date.T6_7}}</td>
+    <td class = 'time'>{{date.T7_8}}</td>
+    <td class = 'time'>{{date.T8_9}}</td>
+    <td class = 'time'>{{date.T9_10}}</td>
+    <td class = 'time'>{{date.T10_11}}</td>
+    <td class = 'time'>{{date.T11_12}}</td>
+    <td class = 'time'>{{date.T12_13}}</td>
+    <td class = 'time'>{{date.T13_14}}</td>
+    <td class = 'time'>{{date.T14_15}}</td>
+    <td class = 'time'>{{date.T15_16}}</td>
+    <td class = 'time'>{{date.T16_17}}</td>
+    <td class = 'time'>{{date.T17_18}}</td>
+    <td class = 'time'>{{date.T18_19}}</td>
+    <td class = 'time'>{{date.T19_20}}</td>
+    <td class = 'time'>{{date.T20_21}}</td>
+    <td class = 'time'>{{date.T21_22}}</td>
+    <td class = 'time'>{{date.T22_23}}</td>
+    <td class = 'time'>{{date.T23_24}}</td>
+
+    </tr>
+  {%endfor%}
+  </tbody>
+</table>
+</div>
+  <script>
+  var x = document.getElementsByClassName("time");
+  for (var i = 0; i < x.length; i++) {
+  if (x[i].textContent.includes('open'))
+      x[i].style.backgroundColor = "green"
+  else if (x[i].textContent.includes('closed'))
+      x[i].style.backgroundColor = "black"
+
+  else
+      x[i].style.backgroundColor = "red"
+      x[i].innerHTML = ""
+
+
+
+  }
+  </script>
+
+<!--<div class="container">-->
+<!--    <div class="jumbotron" style=background-color:#c1c1c1; >-->
+<!--  <div style="margin:0 auto;text-align:center">-->
+
+<!--<h1>{{object.Date}}</h1>-->
+<!--  <form  method="post">-->
+<!--    {% csrf_token %}-->
+<!--    {{form.first_name.label}}<br>-->
+<!--    {{form.first_name}}<br>-->
+<!--    {{form.sur_name.label}}<br>-->
+<!--    {{form.sur_name}}<br>-->
+<!--    {{form.email.label}}<br>-->
+<!--    {{form.email}}<br>-->
+<!--    {{form.mobil_phone.label}}<br>-->
+<!--    {{form.mobil_phone}}<br>-->
+<!--    {{form.Time_Select.label}}<br>-->
+<!--    {{form.Time_Select}}<br><br>-->
+<!--  <button type="submit" style=height:50px;width:200px;>Send</button>-->
+<!--    </div>-->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
