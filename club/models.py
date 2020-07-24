@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 
 class ReservationDate(models.Model):
     day_id = models.AutoField(primary_key=True)
-    Date = models.DateField()
+    Date = models.DateField(unique = True)
     T6_7 = models.TextField(default='open')
     T7_8 = models.TextField(default='open')
     T8_9 = models.TextField(default='open')

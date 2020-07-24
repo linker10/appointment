@@ -11,6 +11,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/reservation.css' %}">
+    
     <title>Hello, world!</title>
   </head>
   <body>
@@ -43,24 +44,24 @@
 {% for date in reservation_date %}
     <tr>
      <td class= "title"><a href="reservation/{{date.day_id}}">{{date.Date}}</a></td>
-    <td class = '{{date.T6_7}}'   onclick="makeReservation(this, {{date.day_id}})"></td>
-    <td class = '{{date.T7_8}}'   onclick="makeReservation(this, {{date.day_id}})"></td>
-    <td class = '{{date.T8_9}}'   onclick="makeReservation(this, {{date.day_id}})"></td>
-    <td class = '{{date.T9_10}}'  onclick="makeReservation(this, {{date.day_id}})"></td>
-    <td class = '{{date.T10_11}}' onclick="makeReservation(this, {{date.day_id}})"></td>
-    <td class = '{{date.T11_12}}' onclick="makeReservation(this, {{date.day_id}})"></td>
-    <td class = '{{date.T12_13}}' onclick="makeReservation(this, {{date.day_id}})"></td>
-    <td class = '{{date.T13_14}}' onclick="makeReservation(this, {{date.day_id}})"></td>
-    <td class = '{{date.T14_15}}' onclick="makeReservation(this, {{date.day_id}})"></td>
-    <td class = '{{date.T15_16}}' onclick="makeReservation(this, {{date.day_id}})"></td>
-    <td class = '{{date.T16_17}}' onclick="makeReservation(this, {{date.day_id}})"></td>
-    <td class = '{{date.T17_18}}' onclick="makeReservation(this, {{date.day_id}})"></td>
-    <td class = '{{date.T18_19}}' onclick="makeReservation(this, {{date.day_id}})"></td>
-    <td class = '{{date.T19_20}}' onclick="makeReservation(this, {{date.day_id}})"></td>
-    <td class = '{{date.T20_21}}' onclick="makeReservation(this, {{date.day_id}})"></td>
-    <td class = '{{date.T21_22}}' onclick="makeReservation(this, {{date.day_id}})"></td>
-    <td class = '{{date.T22_23}}' onclick="makeReservation(this, {{date.day_id}})"></td>
-    <td class = '{{date.T23_24}}' onclick="makeReservation(this, {{date.day_id}})"></td>
+    <td class = '{{date.T6_7}}'   onclick="makeReservation(this, {{date.day_id}})" onmouseover="MouseOver(this);" onmouseout="MouseOut(this);"></td>
+    <td class = '{{date.T7_8}}'   onclick="makeReservation(this, {{date.day_id}})" onmouseover="MouseOver(this);" onmouseout="MouseOut(this);"></td>
+    <td class = '{{date.T8_9}}'   onclick="makeReservation(this, {{date.day_id}})" onmouseover="MouseOver(this);" onmouseout="MouseOut(this);"></td>
+    <td class = '{{date.T9_10}}'  onclick="makeReservation(this, {{date.day_id}})" onmouseover="MouseOver(this);" onmouseout="MouseOut(this);"></td>
+    <td class = '{{date.T10_11}}' onclick="makeReservation(this, {{date.day_id}})" onmouseover="MouseOver(this);" onmouseout="MouseOut(this);"></td>
+    <td class = '{{date.T11_12}}' onclick="makeReservation(this, {{date.day_id}})" onmouseover="MouseOver(this);" onmouseout="MouseOut(this);"></td>
+    <td class = '{{date.T12_13}}' onclick="makeReservation(this, {{date.day_id}})" onmouseover="MouseOver(this);" onmouseout="MouseOut(this);"></td>
+    <td class = '{{date.T13_14}}' onclick="makeReservation(this, {{date.day_id}})" onmouseover="MouseOver(this);" onmouseout="MouseOut(this);"></td>
+    <td class = '{{date.T14_15}}' onclick="makeReservation(this, {{date.day_id}})" onmouseover="MouseOver(this);" onmouseout="MouseOut(this);"></td>
+    <td class = '{{date.T15_16}}' onclick="makeReservation(this, {{date.day_id}})" onmouseover="MouseOver(this);" onmouseout="MouseOut(this);"></td>
+    <td class = '{{date.T16_17}}' onclick="makeReservation(this, {{date.day_id}})" onmouseover="MouseOver(this);" onmouseout="MouseOut(this);"></td>
+    <td class = '{{date.T17_18}}' onclick="makeReservation(this, {{date.day_id}})" onmouseover="MouseOver(this);" onmouseout="MouseOut(this);"></td>
+    <td class = '{{date.T18_19}}' onclick="makeReservation(this, {{date.day_id}})" onmouseover="MouseOver(this);" onmouseout="MouseOut(this);"></td>
+    <td class = '{{date.T19_20}}' onclick="makeReservation(this, {{date.day_id}})" onmouseover="MouseOver(this);" onmouseout="MouseOut(this);"></td>
+    <td class = '{{date.T20_21}}' onclick="makeReservation(this, {{date.day_id}})" onmouseover="MouseOver(this);" onmouseout="MouseOut(this);"></td>
+    <td class = '{{date.T21_22}}' onclick="makeReservation(this, {{date.day_id}})" onmouseover="MouseOver(this);" onmouseout="MouseOut(this);"></td>
+    <td class = '{{date.T22_23}}' onclick="makeReservation(this, {{date.day_id}})" onmouseover="MouseOver(this);" onmouseout="MouseOut(this);"></td>
+    <td class = '{{date.T23_24}}' onclick="makeReservation(this, {{date.day_id}})" onmouseover="MouseOver(this);" onmouseout="MouseOut(this);"></td>
 
     </tr>
   {%endfor%}
@@ -74,6 +75,19 @@
 function makeReservation(el,day) {
   if (el.className == "open") {
   document.location.href = "reservation/" + day
+  el.style.backgroundColor = "darkgreen";
+  }
+}
+
+function MouseOver(el) {
+  if (el.className == "open") {
+  el.style.backgroundColor = "darkgreen";
+  }
+}
+
+function MouseOut(el) {
+  if (el.className == "open") {
+  el.style.backgroundColor = "green";
   }
 }
 
